@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme{
+    --color-secondary-pink: #FFEDF7;
+    --color-primary-pink: #905E5A;
+    --color-primary-gray: #A3A3A3;
+    --color-primary-black: #444444;
+}
+
+@layer utilities{
+    .font-poppins{
+        font-family: 'Poppins';
+    }
+    .font-kavoon{
+        font-family: 'Kavoon';
+    }
+}

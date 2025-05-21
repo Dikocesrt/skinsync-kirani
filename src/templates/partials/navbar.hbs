@@ -1,0 +1,91 @@
+<!-- NAVBAR MOBILE -->
+<div class="flex flex-col  py-[20px] gap-y-[12px] lg:hidden">
+
+    <div class="flex flex-row justify-between ">
+        <a href="/" class="flex flex-row items-center">
+            <img src="/img/logo.svg" alt="" class="w-[30px]">
+            <p class=" font-kavoon text-[20px] text-primary-pink">SKINSYNC AI</p>
+        </a>
+        
+        <img src="/img/menu.svg" alt="" id="menu-toggle" class= "w-[24px]">
+        
+    </div>
+
+    <div id="dropdown-menu" class="flex flex-col gap-y-[4px] hidden ">
+        <a href="/" class="font-poppins text-[16px] text-primary-pink font-semibold {{#if isFront}} scale-105 {{else}} hover:scale-105 {{/if}}" >Beranda</a>
+        <a href="/products" class="font-poppins text-[16px] text-primary-pink font-semibold {{#if isProduct}} scale-105 {{else}} hover:scale-105 {{/if}}" >Skincare</a>
+        <a href="/articles" class="font-poppins text-[16px] text-primary-pink font-semibold {{#if isArticle}} scale-105 {{else}} hover:scale-105 {{/if}}" >Artikel</a>
+        <a href="/histories" class="font-poppins text-[16px] text-primary-pink font-semibold {{#if isHistory}} scale-105 {{else}} hover:scale-105 {{/if}} mb-2" >Riwayat</a>
+
+        {{#if user}}
+        <div class="flex flex-row w-full gap-x-[8px]">
+            <div class="w-full flex justify-center items-center border border-primary-pink rounded-[12px]">
+                <p class="font-poppins text-[14px] text-primary-pink font-semibold">{{user.username}}</p>
+            </div>
+            <a href="/logout" class="flex flex-col w-full items-center justify-center bg-red-300 px-[16px] py-[8px] rounded-[12px] ms-auto group hover:scale-105">
+                <p class="font-poppins text-[14px] text-white font-semibold group-hover:text-white">Logout</p>
+            </a>
+        </div>
+        {{else}}
+        <a href="/login" class="flex flex-col w-full items-center justify-center bg-white px-[16px] py-[8px] rounded-[12px] border border-primary-pink ms-auto hover:bg-primary-pink group hover:scale-110">
+            <p class="font-poppins text-[14px] text-primary-pink font-semibold group-hover:text-white">Login</p>
+        </a>
+        {{/if}}
+    </div>
+
+
+</div>
+
+<!-- NAVBAR WEB -->
+<div class=" flex-row justify-between items-center py-[20px] hidden lg:flex">
+
+    <a href="/" class="flex flex-row items-center">
+        <img src="/img/logo.svg" alt="" class="w-[50px] h-[40px]">
+        <p class=" font-kavoon text-[28px] text-primary-pink" >SKINSYNC AI</p>
+    </a>
+
+
+    <!--  Menu -->
+    <div class="flex flex-row gap-x-[40px]">
+        <div class="flex flex-col group">
+            <a href="/" class="font-poppins text-[20px] text-primary-pink font-semibold" >Beranda</a>
+
+            <div class="{{#if isFront}} block {{else}} hidden group-hover:block {{/if}} border-b-3 border-primary-pink w-[75%] mx-auto rounded-[12px]"></div>
+        </div>
+
+        <div class="flex flex-col group">
+            <a href="/products" class="font-poppins text-[20px] text-primary-pink font-semibold" >Skincare</a>
+
+            <div class="{{#if isProduct}} block {{else}} hidden group-hover:block {{/if}} border-b-3 border-primary-pink w-[75%] mx-auto rounded-[12px]"></div>
+        </div>
+
+        <div class="flex flex-col group">
+            <a href="/articles" class="font-poppins text-[20px] text-primary-pink font-semibold" >Artikel</a>
+
+            <div class="{{#if isArticle}} block {{else}} hidden group-hover:block {{/if}} border-b-3 border-primary-pink w-[75%] mx-auto rounded-[12px]"></div>
+        </div>
+
+        <div class="flex flex-col group">
+            <a href="/histories" class="font-poppins text-[20px] text-primary-pink font-semibold" >Riwayat</a>
+
+            <div class="{{#if isHistory}} block {{else}} hidden group-hover:block {{/if}} border-b-3 border-primary-pink w-[75%] mx-auto rounded-[12px]"></div>
+        </div>
+    </div>
+
+    <!--  Login -->
+    {{#if user}}
+    <div class="flex flex-row w-fit gap-x-[8px]">
+        <div class="w-fit flex justify-center items-center border border-primary-pink rounded-[12px] px-4">
+            <p class="font-poppins text-[14px] text-primary-pink font-semibold">{{user.username}}</p>
+        </div>
+        <a href="/logout" class="flex flex-col w-fit items-center justify-center bg-red-300 px-[16px] py-[8px] rounded-[12px] ms-auto group hover:scale-105">
+            <p class="font-poppins text-[14px] text-white font-semibold group-hover:text-white">Logout</p>
+        </a>
+    </div>
+    {{else}}
+    <a href="/login" class="border-2 border-primary-pink rounded-[20px] px-[32px] py-[6px] bg-white hover:bg-primary-pink group hover:scale-110">
+        <p class="font-poppins text-[16px] text-primary-pink font-semibold group-hover:text-white" >Login</p>
+    </a>
+    {{/if}}
+    
+</div>

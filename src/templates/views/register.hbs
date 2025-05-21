@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkinSync Register</title>
+
+    {{> font}}
+
+    {{> css}}
+</head>
+<body class="bg-secondary-pink min-h-screen flex justify-center items-center">
+
+    <form class="flex flex-row-reverse bg-white w-fit rounded-[12px]" action="/register" method="post">
+        <img src="/img/login.png" alt="" class="hidden lg:block w-[370px] rounded-r-[12px]">
+
+        <div class="flex flex-col gap-y-[10px] lg:justify-center p-[24px] lg:py-0 lg:px-[60px]">
+            <p class="font-poppins text-[16px] text-primary-pink font-semibold mb-1 text-center">HALO BESTIE SELAMAT DATANG</p>
+
+            {{#if error}}
+                <div class="flex w-full justify-center items-center py-2 border rounded-[4px] bg-red-300 border-red-500">
+                    <p class="font-poppins text-[10px] text-red-500 font-semibold">{{error}}</p>
+                </div>
+            {{/if}}
+            
+            <div class="flex flex-col gap-y-[4px]">
+                <label for="username" class="font-poppins text-[12px] text-primary-pink font-semibold">Username</label>
+                <input required type="text" name="username" id="username" class="w-full border-2 px-3 border-[#C4C4C4] rounded-[8px] shadow-lg py-[6px] text-[12px] focus:outline-primary-pink font-poppins">
+            </div>
+            
+            <div class="flex flex-col gap-y-[4px]">
+                <label for="email" class="font-poppins text-[12px] text-primary-pink font-semibold">Email</label>
+                <input required type="email" name="email" id="email" class="w-full border-2 px-3 border-[#C4C4C4] rounded-[8px] shadow-lg py-[6px] text-[12px] focus:outline-primary-pink font-poppins">
+            </div>
+
+            <div class="flex flex-col gap-y-[4px]">
+                <label for="password" class="font-poppins text-[12px] text-primary-pink font-semibold">Password</label>
+                <input required type="password" name="password" id="password" class="w-full border-2 px-3 border-[#C4C4C4] rounded-[8px] shadow-lg py-[6px] text-[12px] focus:outline-primary-pink font-poppins">
+            </div>
+            
+            <div class="flex flex-col gap-y-[4px] mb-1">
+                <label for="confirmPassword" class="font-poppins text-[12px] text-primary-pink font-semibold">Konfirmasi Password</label>
+                <input required type="password" name="confirmPassword" id="confirmPassword" class="w-full border-2 px-3 border-[#C4C4C4] rounded-[8px] shadow-lg py-[6px] text-[12px] focus:outline-primary-pink font-poppins">
+            </div>
+
+            <button type="submit" class="bg-primary-pink py-[7px]  px-4 rounded-[8px]">
+                <p class="font-poppins text-[12px] text-white font-semibold">Daftar</p>
+            </button>
+
+            <p class="font-poppins text-[12px] text-primary-gray text-center">Sudah punya akun? <a href="/login" class="font-poppins text-[12px] text-primary-pink font-semibold underline">Login</a></p>
+
+        </div>
+
+    </form>
+    
+</body>
+</html>
