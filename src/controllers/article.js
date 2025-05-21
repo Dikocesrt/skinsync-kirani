@@ -11,11 +11,11 @@ const listArticle = async (req, res) => {
 
         plainArticles.map((article) => {
             if(article.image) {
-                article.image = getURL(article.image, 300, 300)
+                article.image = getURL(article.image, 500, 250)
             }
         })
 
-        res.render("article/list", { articles: plainArticles, isArticle: true })
+        res.render("articles/list", { articles: plainArticles, isArticle: true })
     } catch (error) {
         console.log("LIST ARTICLES ERROR => " + error)
     }
