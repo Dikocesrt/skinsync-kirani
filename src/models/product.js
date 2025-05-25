@@ -11,7 +11,7 @@ const Product = sequelize.define(
     benefit: { type: DataTypes.TEXT },
     ingredient: { type: DataTypes.TEXT },
     instruction: { type: DataTypes.TEXT },
-    link_url: { type: DataTypes.STRING },
+    link_url: { type: DataTypes.TEXT },
     category: {
       type: DataTypes.ENUM(
         "micellar water",
