@@ -12,10 +12,10 @@
     </div>
 
     <div id="dropdown-menu" class="flex flex-col gap-y-[4px] hidden ">
-        <a href="/" class="font-poppins text-[16px] text-primary-pink font-semibold {{#if isFront}} scale-105 {{else}} hover:scale-105 {{/if}}" >Beranda</a>
-        <a href="/products" class="font-poppins text-[16px] text-primary-pink font-semibold {{#if isProduct}} scale-105 {{else}} hover:scale-105 {{/if}}" >Skincare</a>
-        <a href="/articles" class="font-poppins text-[16px] text-primary-pink font-semibold {{#if isArticle}} scale-105 {{else}} hover:scale-105 {{/if}}" >Artikel</a>
-        <a href="/histories" class="font-poppins text-[16px] text-primary-pink font-semibold {{#if isHistory}} scale-105 {{else}} hover:scale-105 {{/if}} mb-2" >Riwayat</a>
+        <a href="/" class="font-poppins text-[14px] text-primary-pink font-semibold {{#if isFront}} scale-105 {{else}} hover:scale-105 {{/if}}" >Beranda</a>
+        <a href="/products" class="font-poppins text-[14px] text-primary-pink font-semibold {{#if isProduct}} scale-105 {{else}} hover:scale-105 {{/if}}" >Skincare</a>
+        <a href="/articles" class="font-poppins text-[14px] text-primary-pink font-semibold {{#if isArticle}} scale-105 {{else}} hover:scale-105 {{/if}}" >Artikel</a>
+        <a href="/histories" class="font-poppins text-[14px] text-primary-pink font-semibold {{#if isHistory}} scale-105 {{else}} hover:scale-105 {{/if}} mb-2" >Riwayat</a>
 
         {{#if user}}
         <div class="flex flex-row w-full gap-x-[8px]">
@@ -37,36 +37,36 @@
 </div>
 
 <!-- NAVBAR WEB -->
-<div class=" flex-row justify-between items-center py-[20px] hidden lg:flex">
+<div class=" flex-row justify-between items-center py-[16px] hidden lg:flex">
 
     <a href="/" class="flex flex-row items-center">
-        <img src="/img/logo.svg" alt="" class="w-[50px] h-[40px]">
-        <p class=" font-kavoon text-[28px] text-primary-pink" >SKINSYNC AI</p>
+        <img src="/img/logo.svg" alt="" class="w-[40px] h-[30px]">
+        <p class=" font-kavoon text-[22px] text-primary-pink" >SKINSYNC AI</p>
     </a>
 
 
     <!--  Menu -->
     <div class="flex flex-row gap-x-[40px]">
         <div class="flex flex-col group">
-            <a href="/" class="font-poppins text-[20px] text-primary-pink font-semibold" >Beranda</a>
+            <a href="/" class="font-poppins text-[16px] text-primary-pink font-semibold" >Beranda</a>
 
             <div class="{{#if isFront}} block {{else}} hidden group-hover:block {{/if}} border-b-3 border-primary-pink w-[75%] mx-auto rounded-[12px]"></div>
         </div>
 
         <div class="flex flex-col group">
-            <a href="/products" class="font-poppins text-[20px] text-primary-pink font-semibold" >Skincare</a>
+            <a href="/products" class="font-poppins text-[16px] text-primary-pink font-semibold" >Skincare</a>
 
             <div class="{{#if isProduct}} block {{else}} hidden group-hover:block {{/if}} border-b-3 border-primary-pink w-[75%] mx-auto rounded-[12px]"></div>
         </div>
 
         <div class="flex flex-col group">
-            <a href="/articles" class="font-poppins text-[20px] text-primary-pink font-semibold" >Artikel</a>
+            <a href="/articles" class="font-poppins text-[16px] text-primary-pink font-semibold" >Artikel</a>
 
             <div class="{{#if isArticle}} block {{else}} hidden group-hover:block {{/if}} border-b-3 border-primary-pink w-[75%] mx-auto rounded-[12px]"></div>
         </div>
 
         <div class="flex flex-col group">
-            <a href="/histories" class="font-poppins text-[20px] text-primary-pink font-semibold" >Riwayat</a>
+            <a href="/histories" class="font-poppins text-[16px] text-primary-pink font-semibold" >Riwayat</a>
 
             <div class="{{#if isHistory}} block {{else}} hidden group-hover:block {{/if}} border-b-3 border-primary-pink w-[75%] mx-auto rounded-[12px]"></div>
         </div>

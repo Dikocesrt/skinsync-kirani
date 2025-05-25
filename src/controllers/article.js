@@ -11,7 +11,7 @@ const listArticle = async (req, res) => {
 
         plainArticles.map((article) => {
             if(article.image) {
-                article.image = getURL(article.image, 500, 250)
+                article.image = getURL(article.image, 350, 200)
             }
         })
 

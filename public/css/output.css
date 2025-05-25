@@ -216,8 +216,8 @@
   .hidden {
     display: none;
   }
-  .h-\[40px\] {
-    height: 40px;
+  .h-\[30px\] {
+    height: 30px;
   }
   .h-full {
     height: 100%;
@@ -234,8 +234,8 @@
   .w-\[30px\] {
     width: 30px;
   }
-  .w-\[50px\] {
-    width: 50px;
+  .w-\[40px\] {
+    width: 40px;
   }
   .w-\[75\%\] {
     width: 75%;
@@ -315,6 +315,9 @@
   .gap-y-\[12px\] {
     row-gap: 12px;
   }
+  .gap-y-\[16px\] {
+    row-gap: 16px;
+  }
   .gap-y-\[20px\] {
     row-gap: 20px;
   }
@@ -391,6 +394,9 @@
   .bg-\[\#D9D9D9\] {
     background-color: #D9D9D9;
   }
+  .bg-\[\#FFF9FC\] {
+    background-color: #FFF9FC;
+  }
   .bg-primary-pink {
     background-color: var(--color-primary-pink);
   }
@@ -445,6 +451,9 @@
   .py-\[12px\] {
     padding-block: 12px;
   }
+  .py-\[16px\] {
+    padding-block: 16px;
+  }
   .py-\[20px\] {
     padding-block: 20px;
   }
@@ -484,8 +493,8 @@
   .text-\[20px\] {
     font-size: 20px;
   }
-  .text-\[28px\] {
-    font-size: 28px;
+  .text-\[22px\] {
+    font-size: 22px;
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
@@ -608,9 +617,9 @@
       display: none;
     }
   }
-  .lg\:w-\[450px\] {
+  .lg\:w-\[350px\] {
     @media (width >= 64rem) {
-      width: 450px;
+      width: 350px;
     }
   }
   .lg\:max-w-\[1050px\] {
@@ -653,9 +662,9 @@
       justify-content: center;
     }
   }
-  .lg\:gap-x-\[40px\] {
+  .lg\:gap-x-\[80px\] {
     @media (width >= 64rem) {
-      column-gap: 40px;
+      column-gap: 80px;
     }
   }
   .lg\:gap-y-0 {
@@ -688,9 +697,14 @@
       font-size: 14px;
     }
   }
-  .lg\:text-\[28px\] {
+  .lg\:text-\[20px\] {
     @media (width >= 64rem) {
-      font-size: 28px;
+      font-size: 20px;
+    }
+  }
+  .\32 xl\:w-\[450px\] {
+    @media (width >= 96rem) {
+      width: 450px;
     }
   }
   .\32 xl\:max-w-\[1500px\] {
@@ -708,9 +722,9 @@
       grid-template-columns: repeat(6, minmax(0, 1fr));
     }
   }
-  .\32 xl\:gap-x-\[180px\] {
+  .\32 xl\:gap-x-\[140px\] {
     @media (width >= 96rem) {
-      column-gap: 180px;
+      column-gap: 140px;
     }
   }
   .\32 xl\:text-\[14px\] {

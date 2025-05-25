@@ -42,7 +42,7 @@ const listProduct = async (req, res) => {
 
         plainProducts.forEach((product) => {
             if (product.image) {
-                product.image = getURL(product.image, 330, 325);
+                product.image = getURL(product.image, 250, 200);
             }
         });
 
