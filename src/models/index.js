@@ -17,14 +17,14 @@ SkinType.hasMany(Article, { foreignKey: "skin_type_id" });
 Article.belongsTo(SkinType, { foreignKey: "skin_type_id" });
 
 const initializeTables = async () => {
-    await User.sync({ alter: true });
-    await SkinType.sync({ alter: true });
-    await Product.sync({ alter: true });
-    await History.sync({ alter: true });
-    await Article.sync({ alter: true });
+    // await User.sync({ alter: true });
+    // await SkinType.sync({ alter: true });
+    // await Product.sync({ alter: true });
+    // await History.sync({ alter: true });
+    // await Article.sync({ alter: true });
 };
 
-// initializeTables();
+initializeTables();
 
 module.exports = {
     User,
