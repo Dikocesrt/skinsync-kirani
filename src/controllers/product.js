@@ -64,7 +64,8 @@ const listProduct = async (req, res) => {
             sunscreenProducts,
             isProduct: true,
             search,
-            skinType
+            skinType,
+            user: req.session.user
         });
     } catch (error) {
         console.error("LIST PRODUCT ERROR =>", error);

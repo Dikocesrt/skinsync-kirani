@@ -15,7 +15,7 @@ const listArticle = async (req, res) => {
             }
         })
 
-        res.render("articles/list", { articles: plainArticles, isArticle: true })
+        res.render("articles/list", { articles: plainArticles, isArticle: true, user: req.session.user })
     } catch (error) {
         console.log("LIST ARTICLES ERROR => " + error)
     }

@@ -56,7 +56,6 @@ Hanya berikan objek JSON valid, tanpa markdown atau tambahan teks apa pun.
     } else if (normalizedTipe === 'kulit sensitif') {
         skin_type_id = 2;
     } else if (normalizedTipe === 'kulit kombinasi') {
-        console.log('MASUK TIPE KULIT KOMBINASI');
         skin_type_id = 3;
     } else if (normalizedTipe === 'kulit berminyak') {
         skin_type_id = 4;
@@ -67,7 +66,7 @@ Hanya berikan objek JSON valid, tanpa markdown atau tambahan teks apa pun.
     }
 
     // Simpan ke DB
-    await History.create({
+    const newHistory = await History.create({
       age,
       gender,
       activity,
@@ -79,7 +78,7 @@ Hanya berikan objek JSON valid, tanpa markdown atau tambahan teks apa pun.
       user_id: req.session.user.id,
     });
 
-    return res.status(200).json({ tipe, penjelasan, perawatan, bahan });
+    return res.redirect(`/histories/${newHistory.id}`);
   } catch (error) {
     console.error('OpenAI or Parsing Error:', error);
     return res.status(500).json({ error: 'Terjadi kesalahan.', raw: error.message });

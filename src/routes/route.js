@@ -5,6 +5,7 @@ const frontController = require("../controllers/front");
 const articleController = require("../controllers/article");
 const productController = require("../controllers/product");
 const openAIController = require("../controllers/openai");
+const historyController = require("../controllers/history");
 
 router.get("/", frontController.showFront);
 router.get("/login", authController.showLogin);
@@ -15,5 +16,6 @@ router.get("/logout", authController.logout);
 router.get("/articles", articleController.listArticle);
 router.get("/products", productController.listProduct);
 router.post("/api/analyze", openAIController.analyzeSkin);
+router.get("/histories/:id", historyController.detailHistory);
 
 module.exports = router;
