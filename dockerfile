@@ -14,4 +14,4 @@ RUN npm install
 COPY . .
 
 # Jalankan aplikasi
-CMD ["npm", "start"]
+CMD ["npm", "start"]
