@@ -9,6 +9,7 @@ const listProduct = async (req, res) => {
         const whereClause = {};
         const includeClause = [];
 
+
         // Filter berdasarkan nama produk
         if (search) {
             whereClause.name = {
@@ -43,6 +44,7 @@ const listProduct = async (req, res) => {
         plainProducts.forEach((product) => {
             if (product.image) {
                 product.image = getURL(product.image, 250, 200);
+                product.detailImage = getURL(product.image, 800, 300);
             }
         });
 

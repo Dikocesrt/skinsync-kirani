@@ -24,7 +24,7 @@ const initializeTables = async () => {
     await Article.sync({ alter: true });
 };
 
-initializeTables();
+// initializeTables();
 
 module.exports = {
     User,

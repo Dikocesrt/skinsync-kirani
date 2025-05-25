@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../../node_modules/flowbite";
+
 @theme{
     --color-secondary-pink: #FFEDF7;
     --color-primary-pink: #905E5A;
