@@ -38,10 +38,12 @@
         </div>
 
         <!-- CARA PENYEBAB KULIT WAJAH -->
+        {{#if history.cause}}
         <div class="flex flex-col gap-y-[16px]">
             <p class="font-poppins text-[20px] text-primary-pink font-semibold underline uppercase">PENYEBAB PERMASALAHAN {{history.skin_type.name}}</p>
             <p class="font-poppins text-[14px] text-primary-gray text-justify first-letter:capitalize">{{history.cause}}</p>
         </div>
+        {{/if}}
 
         <!-- CARA PERAWATAN KULIT WAJAH -->
         <div class="flex flex-col gap-y-[16px]">

@@ -1,6 +1,25 @@
 const { History, Product, Article, SkinType } = require("../models/index");
 const getURL = require("../helpers/getImage");
 
+const listHistory = async (req, res) => {
+    const histories = await History.findAll({ include: [{ model: SkinType, as: "skin_type" }], where: { user_id: req.session.user.id } });
+
+    const plainHistories = histories.map((history) => history.get({ plain: true }));
+
+    plainHistories.forEach((history) => {
+        if (history.skin_type.image) {
+            history.skin_type.image = getURL(history.skin_type.image, 215, 195);
+        }
+        history.createdAt = history.createdAt.toLocaleDateString('id-ID', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        });
+    });
+
+    res.render("histories/list", { histories: plainHistories, user: req.session.user, isHistory: true });
+};
+
 const detailHistory = async (req, res) => {
     const { id } = req.params;
     // const isHistory = req.
@@ -124,4 +143,4 @@ const detailHistory = async (req, res) => {
     res.render("histories/detail", { history: plainHistory, products: plainProducts, articles: plainArticles, createdAt, user: req.session.user, bahanDipakai, bahanDihindari });
 };
 
-module.exports = { detailHistory };
+module.exports = { detailHistory, listHistory };

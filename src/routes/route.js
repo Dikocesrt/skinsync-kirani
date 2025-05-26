@@ -17,5 +17,6 @@ router.get("/articles", articleController.listArticle);
 router.get("/products", productController.listProduct);
 router.post("/api/analyze", openAIController.analyzeSkin);
 router.get("/histories/:id", historyController.detailHistory);
+router.get("/histories", historyController.listHistory);
 
 module.exports = router;

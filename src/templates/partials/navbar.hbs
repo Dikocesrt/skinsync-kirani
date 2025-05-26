@@ -15,7 +15,11 @@
         <a href="/" class="font-poppins text-[14px] text-primary-pink font-semibold {{#if isFront}} scale-105 {{else}} hover:scale-105 {{/if}}" >Beranda</a>
         <a href="/products" class="font-poppins text-[14px] text-primary-pink font-semibold {{#if isProduct}} scale-105 {{else}} hover:scale-105 {{/if}}" >Skincare</a>
         <a href="/articles" class="font-poppins text-[14px] text-primary-pink font-semibold {{#if isArticle}} scale-105 {{else}} hover:scale-105 {{/if}}" >Artikel</a>
+        {{#if user}}
         <a href="/histories" class="font-poppins text-[14px] text-primary-pink font-semibold {{#if isHistory}} scale-105 {{else}} hover:scale-105 {{/if}} mb-2" >Riwayat</a>
+        {{else}}
+        <a href="/login" class="font-poppins text-[14px] text-primary-pink font-semibold {{#if isHistory}} scale-105 {{else}} hover:scale-105 {{/if}} mb-2" >Riwayat</a>
+        {{/if}}
 
         {{#if user}}
         <div class="flex flex-row w-full gap-x-[8px]">
@@ -65,11 +69,19 @@
             <div class="{{#if isArticle}} block {{else}} hidden group-hover:block {{/if}} border-b-3 border-primary-pink w-[75%] mx-auto rounded-[12px]"></div>
         </div>
 
+        {{#if user}}
         <div class="flex flex-col group">
             <a href="/histories" class="font-poppins text-[16px] text-primary-pink font-semibold" >Riwayat</a>
 
             <div class="{{#if isHistory}} block {{else}} hidden group-hover:block {{/if}} border-b-3 border-primary-pink w-[75%] mx-auto rounded-[12px]"></div>
         </div>
+        {{else}}
+        <div class="flex flex-col group">
+            <a href="/login" class="font-poppins text-[16px] text-primary-pink font-semibold" >Riwayat</a>
+
+            <div class="{{#if isHistory}} block {{else}} hidden group-hover:block {{/if}} border-b-3 border-primary-pink w-[75%] mx-auto rounded-[12px]"></div>
+        </div>
+        {{/if}}
     </div>
 
     <!--  Login -->

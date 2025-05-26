@@ -23,6 +23,11 @@ hbs.registerHelper('ifEquals', function (arg1, arg2, options) {
 hbs.registerHelper('inc', function (value) {
   return parseInt(value, 10) + 1;
 });
+hbs.registerHelper("truncate", function (text, limit) {
+    if (!text) return "";
+    if (text.length <= limit) return text;
+    return text.substring(0, limit) + "...";
+});
 
 // SETUP STATIC FILE
 app.use(express.static(path.join(__dirname, "../public")));
