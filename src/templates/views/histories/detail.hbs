@@ -56,7 +56,7 @@
             <p class="font-poppins text-[20px] text-primary-pink font-semibold underline uppercase">Kandungan Bahan Skincare Yang Baik Digunakan</p>
             <div class="flex flex-col">
                 {{#each bahanDipakai}}
-                    <p class="font-poppins text-[14px] text-primary-gray text-justify">{{inc @index}}. {{this}}</p>
+                    <p class="font-poppins text-[14px] text-primary-gray text-start">{{inc @index}}. {{this}}</p>
                 {{/each}}
             </div>
         </div>
@@ -65,7 +65,7 @@
             <p class="font-poppins text-[20px] text-primary-pink font-semibold underline uppercase">Kandungan Bahan Skincare Yang Harus Dihindari</p>
             <div class="flex flex-col">
                 {{#each bahanDihindari}}
-                    <p class="font-poppins text-[14px] text-primary-gray text-justify">{{inc @index}}. {{this}}</p>
+                    <p class="font-poppins text-[14px] text-primary-gray text-start">{{inc @index}}. {{this}}</p>
                 {{/each}}
             </div>
         </div>

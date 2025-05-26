@@ -25,22 +25,28 @@
             
             <div class="flex flex-col gap-y-[4px]">
                 <label for="username" class="font-poppins text-[12px] text-primary-pink font-semibold">Username</label>
-                <input required type="text" name="username" id="username" class="w-full border-2 px-3 border-[#C4C4C4] rounded-[8px] shadow-lg py-[6px] text-[12px] focus:outline-primary-pink font-poppins">
+                <input required type="text" name="username" id="username" class="w-full border-2 px-3 border-[#C4C4C4] rounded-[8px] shadow-lg py-[6px] text-[12px] focus:border-primary-pink font-poppins focus:ring-0">
             </div>
             
             <div class="flex flex-col gap-y-[4px]">
                 <label for="email" class="font-poppins text-[12px] text-primary-pink font-semibold">Email</label>
-                <input required type="email" name="email" id="email" class="w-full border-2 px-3 border-[#C4C4C4] rounded-[8px] shadow-lg py-[6px] text-[12px] focus:outline-primary-pink font-poppins">
+                <input required type="email" name="email" id="email" class="w-full border-2 px-3 border-[#C4C4C4] rounded-[8px] shadow-lg py-[6px] text-[12px] focus:border-primary-pink font-poppins focus:ring-0">
             </div>
 
             <div class="flex flex-col gap-y-[4px]">
                 <label for="password" class="font-poppins text-[12px] text-primary-pink font-semibold">Password</label>
-                <input required type="password" name="password" id="password" class="w-full border-2 px-3 border-[#C4C4C4] rounded-[8px] shadow-lg py-[6px] text-[12px] focus:outline-primary-pink font-poppins">
+                <div class="relative">
+                    <input required type="password" name="password" id="password" class="w-full border-2 px-3 border-[#C4C4C4] rounded-[8px] shadow-lg py-[6px] text-[12px] focus:border-primary-pink font-poppins focus:ring-0">
+                    <img id="togglePassword" src="/img/eye-open.svg" alt="" class="absolute right-0 top-1/2 -translate-y-1/2 w-5 -translate-x-1/2">
+                </div>
             </div>
             
             <div class="flex flex-col gap-y-[4px] mb-1">
                 <label for="confirmPassword" class="font-poppins text-[12px] text-primary-pink font-semibold">Konfirmasi Password</label>
-                <input required type="password" name="confirmPassword" id="confirmPassword" class="w-full border-2 px-3 border-[#C4C4C4] rounded-[8px] shadow-lg py-[6px] text-[12px] focus:outline-primary-pink font-poppins">
+                <div class="relative">
+                    <input required type="password" name="confirmPassword" id="confirmPassword" class="w-full border-2 px-3 border-[#C4C4C4] rounded-[8px] shadow-lg py-[6px] text-[12px] focus:border-primary-pink font-poppins focus:ring-0">
+                    <img id="toggleConfirmPassword" src="/img/eye-open.svg" alt="" class="absolute right-0 top-1/2 -translate-y-1/2 w-5 -translate-x-1/2">
+                </div>
             </div>
 
             <button type="submit" class="bg-primary-pink py-[7px]  px-4 rounded-[8px]">
@@ -53,5 +59,24 @@
 
     </form>
     
+    <script>
+        const passwordInput = document.getElementById("password");
+        const togglePassword = document.getElementById("togglePassword");
+
+        togglePassword.addEventListener("click", function () {
+            const isPassword = passwordInput.type === "password";
+            passwordInput.type = isPassword ? "text" : "password";
+            togglePassword.src = isPassword ? "/img/eye-close.svg" : "/img/eye-open.svg";
+        });
+
+        const passwordInput2 = document.getElementById("confirmPassword");
+        const togglePassword2 = document.getElementById("toggleConfirmPassword");
+
+        togglePassword2.addEventListener("click", function () {
+            const isPassword2 = passwordInput2.type === "password";
+            passwordInput2.type = isPassword2 ? "text" : "password";
+            togglePassword2.src = isPassword2 ? "/img/eye-close.svg" : "/img/eye-open.svg";
+        });
+    </script>
 </body>
 </html>
