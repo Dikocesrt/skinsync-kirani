@@ -20,6 +20,9 @@ hbs.registerPartials(path.join(__dirname, "./templates/partials"));
 hbs.registerHelper('ifEquals', function (arg1, arg2, options) {
   return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
 });
+hbs.registerHelper('inc', function (value) {
+  return parseInt(value, 10) + 1;
+});
 
 // SETUP STATIC FILE
 app.use(express.static(path.join(__dirname, "../public")));

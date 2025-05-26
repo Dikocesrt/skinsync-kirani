@@ -15,7 +15,7 @@ const History = sequelize.define(
     content: { type: DataTypes.TEXT },
     result: { type: DataTypes.TEXT },
     treatment: { type: DataTypes.TEXT },
-    ingredient: { type: DataTypes.TEXT },
+    cause: { type: DataTypes.TEXT },
     skin_type_id: {
       type: DataTypes.INTEGER,
       references: {

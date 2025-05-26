@@ -9,7 +9,11 @@
     {{> css}}
 </head>
 <body>
-    {{> navbar}}
+    <div class="w-full bg-secondary-pink">
+        <div class="w-full max-w-[350px] lg:max-w-[1050px] 2xl:max-w-[1500px] mx-auto">
+            {{> navbar}}
+       </div>
+    </div>
 
     <!-- PEMBUNGKUS -->
      <div class=" flex flex-col gap-y-[20px] max-w-[350px] lg:max-w-[1050px] 2xl:max-w-[1500px] mx-auto py-[20px]">
@@ -20,36 +24,60 @@
             <div class="flex flex-col gap-y-[20px]">
                 <p class="font-poppins text-[20px] text-primary-pink font-semibold uppercase">KULIT WAJAH ANDA TERMASUK TIPE {{history.skin_type.name}}</p>
                 <p class="font-poppins text-[14px] text-primary-gray ">{{createdAt}}</p>
-                <!-- PENJELASAN KULIT WAJAH -->
-                <p class="font-poppins text-[14px] text-primary-gray text-justify">{{history.result}}</p>
+                <div class="flex flex-col gap-y-[40px]">
+                    <!-- PENJELASAN KULIT WAJAH -->
+                    <p class="font-poppins text-[14px] text-primary-gray text-justify">{{history.result}}</p>
+                    <!-- INPUTAN PERMASALAHAN KULIT USER SEBELUMNYA -->
+                    <div class="flex flex-col gap-y-[16px]">
+                        <p class="font-poppins text-[20px] text-primary-pink font-semibold underline">PERMASALAHAN KULIT SEBELUMNYA</p>
+                        <p class="font-poppins text-[14px] text-primary-gray text-justify">{{history.content}}</p>
+                    </div>
+                </div>
+                
             </div>
         </div>
 
-        <!-- INPUTAN PERMASALAHAN KULIT USER SEBELUMNYA -->
+        <!-- CARA PENYEBAB KULIT WAJAH -->
         <div class="flex flex-col gap-y-[16px]">
-            <p class="font-poppins text-[20px] text-primary-pink font-semibold underline">PERMASALAHAN KULIT SEBELUMNYA</p>
-            <p class="font-poppins text-[14px] text-primary-gray text-justify">{{history.content}}</p>
+            <p class="font-poppins text-[20px] text-primary-pink font-semibold underline uppercase">PENYEBAB PERMASALAHAN {{history.skin_type.name}}</p>
+            <p class="font-poppins text-[14px] text-primary-gray text-justify first-letter:capitalize">{{history.cause}}</p>
         </div>
 
         <!-- CARA PERAWATAN KULIT WAJAH -->
         <div class="flex flex-col gap-y-[16px]">
-            <p class="font-poppins text-[20px] text-primary-pink font-semibold underline">PERAWATAN KULIT KERING</p>
-            <p class="font-poppins text-[14px] text-primary-gray text-justify">{{history.treatment}}</p>
+            <p class="font-poppins text-[20px] text-primary-pink font-semibold underline uppercase">PERAWATAN {{history.skin_type.name}}</p>
+            <p class="font-poppins text-[14px] text-primary-gray text-justify first-letter:capitalize">{{history.treatment}}</p>
         </div>
 
         <!-- BAHAN SKINCARE -->
         <div class="flex flex-col gap-y-[16px]">
-            <p class="font-poppins text-[20px] text-primary-pink font-semibold underline">BAHAN YANG HARUS DIHINDARI DAN HARUS DIPAKAI</p>
-            <p class="font-poppins text-[14px] text-primary-gray text-justify">{{history.ingredient}}</p>
+            <p class="font-poppins text-[20px] text-primary-pink font-semibold underline uppercase">Kandungan Bahan Skincare Yang Baik Digunakan</p>
+            <div class="flex flex-col">
+                {{#each bahanDipakai}}
+                    <p class="font-poppins text-[14px] text-primary-gray text-justify">{{inc @index}}. {{this}}</p>
+                {{/each}}
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-y-[16px]">
+            <p class="font-poppins text-[20px] text-primary-pink font-semibold underline uppercase">Kandungan Bahan Skincare Yang Harus Dihindari</p>
+            <div class="flex flex-col">
+                {{#each bahanDihindari}}
+                    <p class="font-poppins text-[14px] text-primary-gray text-justify">{{inc @index}}. {{this}}</p>
+                {{/each}}
+            </div>
         </div>
 
         <!-- REKOMENDASI SKINCARE -->
         <div class="flex flex-col gap-y-[16px]">
-            <p class="font-poppins text-[20px] text-primary-pink font-semibold underline">REKOMENDASI SKINCARE</p>
+            <p class="font-poppins text-[20px] text-primary-pink font-semibold underline uppercase">REKOMENDASI SKINCARE {{history.skin_type.name}}</p>
             <div class="grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6 gap-x-[20px] gap-y-[20px]">
                     <!-- item -->
                     {{#each products}}
-                    <div class="flex flex-col  bg-white  rounded-[12px] shadow-lg">
+                    <div class="flex flex-col  bg-white  rounded-[12px] shadow-lg relative">
+                        <div class="bg-secondary-pink rounded-bl-[12px] rounded-tr-[12px] absolute top-0 right-0 flex justify-center items-center px-3 py-2">
+                            <p class="uppercase font-poppins font-bold text-[12px] text-primary-pink">{{this.category}}</p>
+                        </div>
                         <img src="{{this.image}}" alt="" class="w-full h-full rounded-t-[12px]">
                         <div class="flex flex-col border-x-2 border-b-2 border-primary-pink rounded-b-[12px] px-[12px] py-[8px] gap-y-[8px]">
                             <p class="font-poppins font-bold text-primary-pink text-[12px] text-center lg:text-[14px] 2xl:text-[16px] ">{{this.name}}</p>
@@ -75,7 +103,7 @@
 
         <!-- ARTIKEL KULIT WAJAH -->
          <div class="flex flex-col gap-y-[16px]">
-            <p class="font-poppins text-[20px] text-primary-pink font-semibold underline"> ARTIKEL KULIT KERING</p>
+            <p class="font-poppins text-[20px] text-primary-pink font-semibold underline uppercase"> ARTIKEL KULIT {{history.skin_type.name}}</p>
             <div class="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 gap-x-[12px] gap-y-[12px]">
                 {{#each articles}}
                     <a target="_blank" href="{{this.link_url}}" class="relative hover:scale-105">

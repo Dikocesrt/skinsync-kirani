@@ -23,7 +23,7 @@ Tentukan tipe kulit wajah pengguna (kulit sensitif, kulit normal, kulit kombinas
   "tipe": "kulit sensitif",
   "penjelasan": "Penjelasan satu paragraf mengenai tipe kulit.",
   "perawatan": "Penjelasan satu paragraf mengenai perawatan kulit.",
-  "bahan": "Rekomendasi bahan yang digunakan dan dihindari."
+  "penyebab": "penyebab dari permasalahan kulit yang diinputkan pengguna"
 }
 
 Hanya berikan objek JSON valid, tanpa markdown atau tambahan teks apa pun.
@@ -46,7 +46,7 @@ Hanya berikan objek JSON valid, tanpa markdown atau tambahan teks apa pun.
 
     // Parse dengan aman
     const json = JSON.parse(match[0]);
-    const { tipe, penjelasan, perawatan, bahan } = json;
+    const { tipe, penjelasan, perawatan, penyebab } = json;
 
     const normalizedTipe = tipe.trim().toLowerCase();
     console.log('TIPE KULIT => ' + normalizedTipe);
@@ -73,7 +73,7 @@ Hanya berikan objek JSON valid, tanpa markdown atau tambahan teks apa pun.
       content: description,
       result: penjelasan,
       treatment: perawatan,
-      ingredient: bahan,
+      cause: penyebab,
       skin_type_id: skin_type_id,
       user_id: req.session.user.id,
     });
