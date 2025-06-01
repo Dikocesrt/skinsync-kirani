@@ -56,6 +56,7 @@ const listProduct = async (req, res) => {
         const sunscreenProducts = plainProducts.filter((product) => product.category === "sunscreen");
 
         res.render("products/list", {
+            products: plainProducts,
             micellarWaterProducts,
             faceWashProducts,
             tonerProducts,

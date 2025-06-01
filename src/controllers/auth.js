@@ -40,6 +40,28 @@ const register = async (req, res) => {
 
     const { username, email, password, confirmPassword } = req.body
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+        req.session.error = "Format email tidak valid"
+        return res.redirect("/register")
+    }
+
+    if (username.length < 4) {
+        req.session.error = "Username minimal terdiri dari 4 karakter"
+        return res.redirect("/register")
+    }
+
+    const onlyNumbers = /^\d+$/
+    if (onlyNumbers.test(username)) {
+        req.session.error = "Username tidak boleh hanya terdiri dari angka"
+        return res.redirect("/register")
+    }
+
+    if (password.length < 6) {
+        req.session.error = "Password minimal terdiri dari 6 karakter"
+        return res.redirect("/register")
+    }
+
     if (password !== confirmPassword) {
         req.session.error = "Password dan Konfirmasi Password tidak cocok"
         return res.redirect("/register")

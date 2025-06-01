@@ -44,234 +44,238 @@
             </form>
         </div>
     </div>
+    {{#if products.length}}
+        <!-- KATEGORI MICELLAR WATER -->
+        {{#if micellarWaterProducts.length}}
+        <div class="w-full bg-[#FFF9FC] py-[20px]">
+            <div class="w-full max-w-[350px] lg:max-w-[1050px] 2xl:max-w-[1500px] mx-auto">
+                <div class="flex flex-col gap-y-[16px]">
+                    <p class="font-poppins text-[20px] text-primary-pink font-bold lg:text-[20px]">MICELLAR WATER</p>
 
-    <!-- KATEGORI MICELLAR WATER -->
-    {{#if micellarWaterProducts.length}}
-    <div class="w-full bg-[#FFF9FC] py-[20px]">
-        <div class="w-full max-w-[350px] lg:max-w-[1050px] 2xl:max-w-[1500px] mx-auto">
-            <div class="flex flex-col gap-y-[16px]">
-                <p class="font-poppins text-[20px] text-primary-pink font-bold lg:text-[20px]">MICELLAR WATER</p>
-
-                <!-- PEMBUNGKUS ITEM -->
-                <div class="grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-x-[20px] gap-y-[20px]">
-                    <!-- item -->
-                    {{#each micellarWaterProducts}}
-                    <div class="flex flex-col  bg-white  rounded-[12px] shadow-lg">
-                        <img src="{{this.image}}" alt="" class="w-full h-full rounded-t-[12px]">
-                        <div class="flex flex-col border-x-2 border-b-2 border-primary-pink rounded-b-[12px] px-[12px] py-[8px] gap-y-[8px]">
-                            <p class="font-poppins font-bold text-primary-pink text-[12px] text-center lg:text-[14px] 2xl:text-[16px] ">{{this.name}}</p>
-                            <div class="flex flex-row justify-between items-center">
-                                <p class="font-poppins font-medium text-primary-gray text-[10px] lg:text-[12px] 2xl:text-[14px] capitalize" >{{this.skin_type.name}}</p>
-                                <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="flex items-center justify-center rounded-[12px] bg-primary-pink px-[16px] py-[4px] hover:scale-105" 
-                                data-name="{{this.name}}"
-                                data-description="{{this.description}}"
-                                data-skin-type="{{this.skin_type.name}}"
-                                data-benefit="{{this.benefit}}"
-                                data-ingredient="{{this.ingredient}}"
-                                data-instruction="{{this.instruction}}"
-                                data-image="{{this.detailImage}}"
-                                data-link="{{this.link_url}}">
-                                    <p class="font-poppins font-medium text-white text-[12px] lg:text-[12px] 2xl:text-[16px]">Detail</p>
-                                </button>
+                    <!-- PEMBUNGKUS ITEM -->
+                    <div class="grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-x-[20px] gap-y-[20px]">
+                        <!-- item -->
+                        {{#each micellarWaterProducts}}
+                        <div class="flex flex-col  bg-white  rounded-[12px] shadow-lg">
+                            <img src="{{this.image}}" alt="" class="w-full h-full rounded-t-[12px]">
+                            <div class="flex flex-col border-x-2 border-b-2 border-primary-pink rounded-b-[12px] px-[12px] py-[8px] gap-y-[8px]">
+                                <p class="font-poppins font-bold text-primary-pink text-[12px] text-center lg:text-[14px] 2xl:text-[16px] ">{{this.name}}</p>
+                                <div class="flex flex-row justify-between items-center">
+                                    <p class="font-poppins font-medium text-primary-gray text-[10px] lg:text-[12px] 2xl:text-[14px] capitalize" >{{this.skin_type.name}}</p>
+                                    <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="flex items-center justify-center rounded-[12px] bg-primary-pink px-[16px] py-[4px] hover:scale-105" 
+                                    data-name="{{this.name}}"
+                                    data-description="{{this.description}}"
+                                    data-skin-type="{{this.skin_type.name}}"
+                                    data-benefit="{{this.benefit}}"
+                                    data-ingredient="{{this.ingredient}}"
+                                    data-instruction="{{this.instruction}}"
+                                    data-image="{{this.detailImage}}"
+                                    data-link="{{this.link_url}}">
+                                        <p class="font-poppins font-medium text-white text-[12px] lg:text-[12px] 2xl:text-[16px]">Detail</p>
+                                    </button>
+                                </div>
                             </div>
                         </div>
+                        {{/each}}
                     </div>
-                    {{/each}}
                 </div>
             </div>
         </div>
-     </div>
-     {{/if}}
+        {{/if}}
 
-    <!-- KATEGORI FACE WASH -->
-    {{#if faceWashProducts.length}}
-    <div class="w-full bg-[#FFF9FC] py-[20px]">
-        <div class="w-full max-w-[350px] lg:max-w-[1050px] 2xl:max-w-[1500px] mx-auto">
-            <div class="flex flex-col gap-y-[12px]">
-                <p class="font-poppins text-[20px] text-primary-pink font-bold lg:text-[20px]">FACE WASH</p>
+        <!-- KATEGORI FACE WASH -->
+        {{#if faceWashProducts.length}}
+        <div class="w-full bg-[#FFF9FC] py-[20px]">
+            <div class="w-full max-w-[350px] lg:max-w-[1050px] 2xl:max-w-[1500px] mx-auto">
+                <div class="flex flex-col gap-y-[12px]">
+                    <p class="font-poppins text-[20px] text-primary-pink font-bold lg:text-[20px]">FACE WASH</p>
 
-                <!-- PEMBUNGKUS ITEM -->
-                <div class="grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-x-[20px] gap-y-[20px]">
-                    <!-- item -->
-                    {{#each faceWashProducts}}
-                    <div class="flex flex-col  bg-white  rounded-[12px] shadow-lg">
-                        <img src="{{this.image}}" alt="" class="w-full h-full rounded-t-[12px]">
-                        <div class="flex flex-col border-x-2 border-b-2 border-primary-pink rounded-b-[12px] px-[12px] py-[8px] gap-y-[8px]">
-                            <p class="font-poppins font-bold text-primary-pink text-[12px] text-center lg:text-[14px] 2xl:text-[16px] ">{{this.name}}</p>
-                            <div class="flex flex-row justify-between items-center">
-                                <p class="font-poppins font-medium text-primary-gray text-[10px] lg:text-[12px] 2xl:text-[14px] capitalize" >{{this.skin_type.name}}</p>
-                                <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="flex items-center justify-center rounded-[12px] bg-primary-pink px-[16px] py-[4px] hover:scale-105" 
-                                data-name="{{this.name}}"
-                                data-description="{{this.description}}"
-                                data-skin-type="{{this.skin_type.name}}"
-                                data-benefit="{{this.benefit}}"
-                                data-ingredient="{{this.ingredient}}"
-                                data-instruction="{{this.instruction}}"
-                                data-image="{{this.detailImage}}"
-                                data-link="{{this.link_url}}">
-                                    <p class="font-poppins font-medium text-white text-[12px] lg:text-[12px] 2xl:text-[16px]">Detail</p>
-                                </button>
+                    <!-- PEMBUNGKUS ITEM -->
+                    <div class="grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-x-[20px] gap-y-[20px]">
+                        <!-- item -->
+                        {{#each faceWashProducts}}
+                        <div class="flex flex-col  bg-white  rounded-[12px] shadow-lg">
+                            <img src="{{this.image}}" alt="" class="w-full h-full rounded-t-[12px]">
+                            <div class="flex flex-col border-x-2 border-b-2 border-primary-pink rounded-b-[12px] px-[12px] py-[8px] gap-y-[8px]">
+                                <p class="font-poppins font-bold text-primary-pink text-[12px] text-center lg:text-[14px] 2xl:text-[16px] ">{{this.name}}</p>
+                                <div class="flex flex-row justify-between items-center">
+                                    <p class="font-poppins font-medium text-primary-gray text-[10px] lg:text-[12px] 2xl:text-[14px] capitalize" >{{this.skin_type.name}}</p>
+                                    <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="flex items-center justify-center rounded-[12px] bg-primary-pink px-[16px] py-[4px] hover:scale-105" 
+                                    data-name="{{this.name}}"
+                                    data-description="{{this.description}}"
+                                    data-skin-type="{{this.skin_type.name}}"
+                                    data-benefit="{{this.benefit}}"
+                                    data-ingredient="{{this.ingredient}}"
+                                    data-instruction="{{this.instruction}}"
+                                    data-image="{{this.detailImage}}"
+                                    data-link="{{this.link_url}}">
+                                        <p class="font-poppins font-medium text-white text-[12px] lg:text-[12px] 2xl:text-[16px]">Detail</p>
+                                    </button>
+                                </div>
                             </div>
                         </div>
+                        {{/each}}
                     </div>
-                    {{/each}}
                 </div>
             </div>
         </div>
-     </div>
-     {{/if}}
+        {{/if}}
 
-     <!-- KATEGORI TONER -->
-     {{#if tonerProducts.length}}
-    <div class="w-full bg-[#FFF9FC] py-[20px]">
-        <div class="w-full max-w-[350px] lg:max-w-[1050px] 2xl:max-w-[1500px] mx-auto">
-            <div class="flex flex-col gap-y-[12px]">
-                <p class="font-poppins text-[20px] text-primary-pink font-bold lg:text-[20px]">TONER</p>
+        <!-- KATEGORI TONER -->
+        {{#if tonerProducts.length}}
+        <div class="w-full bg-[#FFF9FC] py-[20px]">
+            <div class="w-full max-w-[350px] lg:max-w-[1050px] 2xl:max-w-[1500px] mx-auto">
+                <div class="flex flex-col gap-y-[12px]">
+                    <p class="font-poppins text-[20px] text-primary-pink font-bold lg:text-[20px]">TONER</p>
 
-                <!-- PEMBUNGKUS ITEM -->
-                <div class="grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-x-[20px] gap-y-[20px]">
-                    <!-- item -->
-                    {{#each tonerProducts}}
-                    <div class="flex flex-col  bg-white  rounded-[12px] shadow-lg">
-                        <img src="{{this.image}}" alt="" class="w-full h-full rounded-t-[12px]">
-                        <div class="flex flex-col border-x-2 border-b-2 border-primary-pink rounded-b-[12px] px-[12px] py-[8px] gap-y-[8px]">
-                            <p class="font-poppins font-bold text-primary-pink text-[12px] text-center lg:text-[14px] 2xl:text-[16px] ">{{this.name}}</p>
-                            <div class="flex flex-row justify-between items-center">
-                                <p class="font-poppins font-medium text-primary-gray text-[10px] lg:text-[12px] 2xl:text-[14px] capitalize" >{{this.skin_type.name}}</p>
-                                <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="flex items-center justify-center rounded-[12px] bg-primary-pink px-[16px] py-[4px] hover:scale-105"
-                                data-name="{{this.name}}"
-                                data-description="{{this.description}}"
-                                data-skin-type="{{this.skin_type.name}}"
-                                data-benefit="{{this.benefit}}"
-                                data-ingredient="{{this.ingredient}}"
-                                data-instruction="{{this.instruction}}"
-                                data-image="{{this.detailImage}}"
-                                data-link="{{this.link_url}}">
-                                    <p class="font-poppins font-medium text-white text-[12px] lg:text-[12px] 2xl:text-[16px]">Detail</p>
-                                </button>
+                    <!-- PEMBUNGKUS ITEM -->
+                    <div class="grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-x-[20px] gap-y-[20px]">
+                        <!-- item -->
+                        {{#each tonerProducts}}
+                        <div class="flex flex-col  bg-white  rounded-[12px] shadow-lg">
+                            <img src="{{this.image}}" alt="" class="w-full h-full rounded-t-[12px]">
+                            <div class="flex flex-col border-x-2 border-b-2 border-primary-pink rounded-b-[12px] px-[12px] py-[8px] gap-y-[8px]">
+                                <p class="font-poppins font-bold text-primary-pink text-[12px] text-center lg:text-[14px] 2xl:text-[16px] ">{{this.name}}</p>
+                                <div class="flex flex-row justify-between items-center">
+                                    <p class="font-poppins font-medium text-primary-gray text-[10px] lg:text-[12px] 2xl:text-[14px] capitalize" >{{this.skin_type.name}}</p>
+                                    <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="flex items-center justify-center rounded-[12px] bg-primary-pink px-[16px] py-[4px] hover:scale-105"
+                                    data-name="{{this.name}}"
+                                    data-description="{{this.description}}"
+                                    data-skin-type="{{this.skin_type.name}}"
+                                    data-benefit="{{this.benefit}}"
+                                    data-ingredient="{{this.ingredient}}"
+                                    data-instruction="{{this.instruction}}"
+                                    data-image="{{this.detailImage}}"
+                                    data-link="{{this.link_url}}">
+                                        <p class="font-poppins font-medium text-white text-[12px] lg:text-[12px] 2xl:text-[16px]">Detail</p>
+                                    </button>
+                                </div>
                             </div>
                         </div>
+                        {{/each}}
                     </div>
-                    {{/each}}
                 </div>
             </div>
         </div>
-     </div>
-     {{/if}}
+        {{/if}}
 
-     <!-- KATEGORI SERUM -->
-     {{#if serumProducts.length}}
-    <div class="w-full bg-[#FFF9FC] py-[20px]">
-        <div class="w-full max-w-[350px] lg:max-w-[1050px] 2xl:max-w-[1500px] mx-auto">
-            <div class="flex flex-col gap-y-[12px]">
-                <p class="font-poppins text-[20px] text-primary-pink font-bold lg:text-[20px]">SERUM</p>
+        <!-- KATEGORI SERUM -->
+        {{#if serumProducts.length}}
+        <div class="w-full bg-[#FFF9FC] py-[20px]">
+            <div class="w-full max-w-[350px] lg:max-w-[1050px] 2xl:max-w-[1500px] mx-auto">
+                <div class="flex flex-col gap-y-[12px]">
+                    <p class="font-poppins text-[20px] text-primary-pink font-bold lg:text-[20px]">SERUM</p>
 
-                <!-- PEMBUNGKUS ITEM -->
-                <div class="grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-x-[20px] gap-y-[20px]">
-                    <!-- item -->
-                    {{#each serumProducts}}
-                    <div class="flex flex-col  bg-white  rounded-[12px] shadow-lg">
-                        <img src="{{this.image}}" alt="" class="w-full h-full rounded-t-[12px]">
-                        <div class="flex flex-col border-x-2 border-b-2 border-primary-pink rounded-b-[12px] px-[12px] py-[8px] gap-y-[8px]">
-                            <p class="font-poppins font-bold text-primary-pink text-[12px] text-center lg:text-[14px] 2xl:text-[16px] ">{{this.name}}</p>
-                            <div class="flex flex-row justify-between items-center">
-                                <p class="font-poppins font-medium text-primary-gray text-[10px] lg:text-[12px] 2xl:text-[14px] capitalize" >{{this.skin_type.name}}</p>
-                                <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="flex items-center justify-center rounded-[12px] bg-primary-pink px-[16px] py-[4px] hover:scale-105"
-                                data-name="{{this.name}}"
-                                data-description="{{this.description}}"
-                                data-skin-type="{{this.skin_type.name}}"
-                                data-benefit="{{this.benefit}}"
-                                data-ingredient="{{this.ingredient}}"
-                                data-instruction="{{this.instruction}}"
-                                data-image="{{this.detailImage}}"
-                                data-link="{{this.link_url}}">
-                                    <p class="font-poppins font-medium text-white text-[12px] lg:text-[12px] 2xl:text-[16px]">Detail</p>
-                                </button>
+                    <!-- PEMBUNGKUS ITEM -->
+                    <div class="grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-x-[20px] gap-y-[20px]">
+                        <!-- item -->
+                        {{#each serumProducts}}
+                        <div class="flex flex-col  bg-white  rounded-[12px] shadow-lg">
+                            <img src="{{this.image}}" alt="" class="w-full h-full rounded-t-[12px]">
+                            <div class="flex flex-col border-x-2 border-b-2 border-primary-pink rounded-b-[12px] px-[12px] py-[8px] gap-y-[8px]">
+                                <p class="font-poppins font-bold text-primary-pink text-[12px] text-center lg:text-[14px] 2xl:text-[16px] ">{{this.name}}</p>
+                                <div class="flex flex-row justify-between items-center">
+                                    <p class="font-poppins font-medium text-primary-gray text-[10px] lg:text-[12px] 2xl:text-[14px] capitalize" >{{this.skin_type.name}}</p>
+                                    <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="flex items-center justify-center rounded-[12px] bg-primary-pink px-[16px] py-[4px] hover:scale-105"
+                                    data-name="{{this.name}}"
+                                    data-description="{{this.description}}"
+                                    data-skin-type="{{this.skin_type.name}}"
+                                    data-benefit="{{this.benefit}}"
+                                    data-ingredient="{{this.ingredient}}"
+                                    data-instruction="{{this.instruction}}"
+                                    data-image="{{this.detailImage}}"
+                                    data-link="{{this.link_url}}">
+                                        <p class="font-poppins font-medium text-white text-[12px] lg:text-[12px] 2xl:text-[16px]">Detail</p>
+                                    </button>
+                                </div>
                             </div>
                         </div>
+                        {{/each}}
                     </div>
-                    {{/each}}
                 </div>
             </div>
         </div>
-     </div>
-     {{/if}}
+        {{/if}}
 
-    <!-- KATEGORI MOISTURIZER -->
-    {{#if moisturizerProducts.length}}
-    <div class="w-full bg-[#FFF9FC] py-[20px]">
-        <div class="w-full max-w-[350px] lg:max-w-[1050px] 2xl:max-w-[1500px] mx-auto">
-            <div class="flex flex-col gap-y-[12px]">
-                <p class="font-poppins text-[20px] text-primary-pink font-bold lg:text-[20px]">MOISTURIZER</p>
+        <!-- KATEGORI MOISTURIZER -->
+        {{#if moisturizerProducts.length}}
+        <div class="w-full bg-[#FFF9FC] py-[20px]">
+            <div class="w-full max-w-[350px] lg:max-w-[1050px] 2xl:max-w-[1500px] mx-auto">
+                <div class="flex flex-col gap-y-[12px]">
+                    <p class="font-poppins text-[20px] text-primary-pink font-bold lg:text-[20px]">MOISTURIZER</p>
 
-                <!-- PEMBUNGKUS ITEM -->
-                <div class="grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-x-[20px] gap-y-[20px]">
-                    <!-- item -->
-                    {{#each moisturizerProducts}}
-                    <div class="flex flex-col  bg-white  rounded-[12px] shadow-lg">
-                        <img src="{{this.image}}" alt="" class="w-full h-full rounded-t-[12px]">
-                        <div class="flex flex-col border-x-2 border-b-2 border-primary-pink rounded-b-[12px] px-[12px] py-[8px] gap-y-[8px]">
-                            <p class="font-poppins font-bold text-primary-pink text-[12px] text-center lg:text-[14px] 2xl:text-[16px] ">{{this.name}}</p>
-                            <div class="flex flex-row justify-between items-center">
-                                <p class="font-poppins font-medium text-primary-gray text-[10px] lg:text-[12px] 2xl:text-[14px] capitalize" >{{this.skin_type.name}}</p>
-                                <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="flex items-center justify-center rounded-[12px] bg-primary-pink px-[16px] py-[4px] hover:scale-105" 
-                                data-name="{{this.name}}"
-                                data-description="{{this.description}}"
-                                data-skin-type="{{this.skin_type.name}}"
-                                data-benefit="{{this.benefit}}"
-                                data-ingredient="{{this.ingredient}}"
-                                data-instruction="{{this.instruction}}"
-                                data-image="{{this.detailImage}}"
-                                data-link="{{this.link_url}}">
-                                    <p class="font-poppins font-medium text-white text-[12px] lg:text-[12px] 2xl:text-[16px]">Detail</p>
-                                </button>
+                    <!-- PEMBUNGKUS ITEM -->
+                    <div class="grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-x-[20px] gap-y-[20px]">
+                        <!-- item -->
+                        {{#each moisturizerProducts}}
+                        <div class="flex flex-col  bg-white  rounded-[12px] shadow-lg">
+                            <img src="{{this.image}}" alt="" class="w-full h-full rounded-t-[12px]">
+                            <div class="flex flex-col border-x-2 border-b-2 border-primary-pink rounded-b-[12px] px-[12px] py-[8px] gap-y-[8px]">
+                                <p class="font-poppins font-bold text-primary-pink text-[12px] text-center lg:text-[14px] 2xl:text-[16px] ">{{this.name}}</p>
+                                <div class="flex flex-row justify-between items-center">
+                                    <p class="font-poppins font-medium text-primary-gray text-[10px] lg:text-[12px] 2xl:text-[14px] capitalize" >{{this.skin_type.name}}</p>
+                                    <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="flex items-center justify-center rounded-[12px] bg-primary-pink px-[16px] py-[4px] hover:scale-105" 
+                                    data-name="{{this.name}}"
+                                    data-description="{{this.description}}"
+                                    data-skin-type="{{this.skin_type.name}}"
+                                    data-benefit="{{this.benefit}}"
+                                    data-ingredient="{{this.ingredient}}"
+                                    data-instruction="{{this.instruction}}"
+                                    data-image="{{this.detailImage}}"
+                                    data-link="{{this.link_url}}">
+                                        <p class="font-poppins font-medium text-white text-[12px] lg:text-[12px] 2xl:text-[16px]">Detail</p>
+                                    </button>
+                                </div>
                             </div>
                         </div>
+                        {{/each}}
                     </div>
-                    {{/each}}
                 </div>
             </div>
         </div>
-     </div>
-     {{/if}}
+        {{/if}}
 
-     <!-- KATEGORI SUNSCREEN -->
-     {{#if sunscreenProducts.length}}
-    <div class="w-full bg-[#FFF9FC] py-[20px]">
-        <div class="w-full max-w-[350px] lg:max-w-[1050px] 2xl:max-w-[1500px] mx-auto">
-            <div class="flex flex-col gap-y-[12px]">
-                <p class="font-poppins text-[20px] text-primary-pink font-bold lg:text-[20px]">SUNSCREEN</p>
-                <!-- PEMBUNGKUS ITEM -->
-                <div class="grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-x-[20px] gap-y-[20px]">
-                    <!-- item -->
-                    {{#each sunscreenProducts}}
-                    <div class="flex flex-col  bg-white  rounded-[12px] shadow-lg">
-                        <img src="{{this.image}}" alt="" class="w-full h-full rounded-t-[12px]">
-                        <div class="flex flex-col border-x-2 border-b-2 border-primary-pink rounded-b-[12px] px-[12px] py-[8px] gap-y-[8px]">
-                            <p class="font-poppins font-bold text-primary-pink text-[12px] text-center lg:text-[14px] 2xl:text-[16px] ">{{this.name}}</p>
-                            <div class="flex flex-row justify-between items-center">
-                                <p class="font-poppins font-medium text-primary-gray text-[10px] lg:text-[12px] 2xl:text-[14px] capitalize" >{{this.skin_type.name}}</p>
-                                <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="flex items-center justify-center rounded-[12px] bg-primary-pink px-[16px] py-[4px] hover:scale-105" 
-                                data-name="{{this.name}}"
-                                data-description="{{this.description}}"
-                                data-skin-type="{{this.skin_type.name}}"
-                                data-benefit="{{this.benefit}}"
-                                data-ingredient="{{this.ingredient}}"
-                                data-instruction="{{this.instruction}}"
-                                data-image="{{this.detailImage}}"
-                                data-link="{{this.link_url}}">
-                                    <p class="font-poppins font-medium text-white text-[12px] lg:text-[12px] 2xl:text-[16px]">Detail</p>
-                                </button>
+        <!-- KATEGORI SUNSCREEN -->
+        {{#if sunscreenProducts.length}}
+        <div class="w-full bg-[#FFF9FC] py-[20px]">
+            <div class="w-full max-w-[350px] lg:max-w-[1050px] 2xl:max-w-[1500px] mx-auto">
+                <div class="flex flex-col gap-y-[12px]">
+                    <p class="font-poppins text-[20px] text-primary-pink font-bold lg:text-[20px]">SUNSCREEN</p>
+                    <!-- PEMBUNGKUS ITEM -->
+                    <div class="grid grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-x-[20px] gap-y-[20px]">
+                        <!-- item -->
+                        {{#each sunscreenProducts}}
+                        <div class="flex flex-col  bg-white  rounded-[12px] shadow-lg">
+                            <img src="{{this.image}}" alt="" class="w-full h-full rounded-t-[12px]">
+                            <div class="flex flex-col border-x-2 border-b-2 border-primary-pink rounded-b-[12px] px-[12px] py-[8px] gap-y-[8px]">
+                                <p class="font-poppins font-bold text-primary-pink text-[12px] text-center lg:text-[14px] 2xl:text-[16px] ">{{this.name}}</p>
+                                <div class="flex flex-row justify-between items-center">
+                                    <p class="font-poppins font-medium text-primary-gray text-[10px] lg:text-[12px] 2xl:text-[14px] capitalize" >{{this.skin_type.name}}</p>
+                                    <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="flex items-center justify-center rounded-[12px] bg-primary-pink px-[16px] py-[4px] hover:scale-105" 
+                                    data-name="{{this.name}}"
+                                    data-description="{{this.description}}"
+                                    data-skin-type="{{this.skin_type.name}}"
+                                    data-benefit="{{this.benefit}}"
+                                    data-ingredient="{{this.ingredient}}"
+                                    data-instruction="{{this.instruction}}"
+                                    data-image="{{this.detailImage}}"
+                                    data-link="{{this.link_url}}">
+                                        <p class="font-poppins font-medium text-white text-[12px] lg:text-[12px] 2xl:text-[16px]">Detail</p>
+                                    </button>
+                                </div>
                             </div>
                         </div>
+                        {{/each}}
                     </div>
-                    {{/each}}
                 </div>
             </div>
         </div>
-     </div>
-     {{/if}}
-
+        {{/if}}
+    {{else}}
+        <div class="w-full max-w-[350px] lg:max-w-[1050px] 2xl:max-w-[1500px] mx-auto py-20">
+            <p class="font-poppins text-[20px] text-gray-400 font-bold lg:text-[20px] text-center">Produk tidak ditemukan!</p>
+        </div>
+    {{/if}}
 
      <div id="crud-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-sm md:max-w-lg lg:max-w-2xl max-h-full">
