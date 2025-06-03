@@ -7,12 +7,11 @@ const openai = new OpenAI({
 });
 
 const analyzeSkin = async (req, res) => {
-  const { age, gender, activity, description } = req.body;
+  const { gender, activity, description } = req.body;
 
   const prompt = `
 Kamu adalah asisten yang hanya merespons dengan JSON murni. Berdasarkan informasi berikut:
 
-- Umur: ${age}
 - Gender: ${gender}
 - Kegiatan sehari-hari: ${activity}
 - Deskripsi kulit: ${description}
@@ -67,7 +66,6 @@ Hanya berikan objek JSON valid, tanpa markdown atau tambahan teks apa pun.
 
     // Simpan ke DB
     const newHistory = await History.create({
-      age,
       gender,
       activity,
       content: description,

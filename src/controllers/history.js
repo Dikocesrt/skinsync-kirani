@@ -2,7 +2,7 @@ const { History, Product, Article, SkinType } = require("../models/index");
 const getURL = require("../helpers/getImage");
 
 const listHistory = async (req, res) => {
-    const histories = await History.findAll({ include: [{ model: SkinType, as: "skin_type" }], where: { user_id: req.session.user.id } });
+    const histories = await History.findAll({ include: [{ model: SkinType, as: "skin_type" }], where: { user_id: req.session.user.id }, order: [["createdAt", "DESC"]] });
 
     const plainHistories = histories.map((history) => history.get({ plain: true }));
 

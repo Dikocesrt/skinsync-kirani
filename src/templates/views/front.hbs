@@ -54,7 +54,15 @@
                 <!-- Modal body -->
                 <form action="/api/analyze" method="post" class="flex flex-col p-5 gap-y-5">
                     <div class="flex flex-col gap-y-3 md:gap-y-0 md:flex-row md:justify-between md:items-center">
-                        <div class="flex flex-col gap-y-5">
+                        <div class="flex flex-col gap-y-1">
+                            <p class="font-poppins font-semibold text-primary-pink text-[16px]">Gender :</p>
+                            <select name="gender" id="gender" class="rounded-[12px] shadow-lg border border-primary-gray hover:outline-none focus:outline-none" required>
+                                <option value="">Pilih Gender</option>
+                                <option value="pria">Laki-laki</option>
+                                <option value="wanita">Perempuan</option>
+                            </select>
+                        </div>
+                        {{!-- <div class="flex flex-col gap-y-5">
                             <div class="flex flex-row items-center gap-x-2">
                                 <p class="font-poppins font-semibold text-primary-pink text-[16px]">Umur :</p>
                                 <input type="number" name="age" id="age" class="rounded-[12px] shadow-lg border border-primary-gray focus:outline-none w-[60%] md:w-[50%] lg:w-[60%]" required>
@@ -67,7 +75,7 @@
                                     <option value="wanita">Perempuan</option>
                                 </select>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="flex flex-col w-[100%] md:w-[50%] gap-y-1 md:gap-y-0">
                             <p class="font-poppins font-semibold text-primary-pink text-[16px]">Kegiatan sehari-hari :</p>
                             <select name="activity" id="activity" class="rounded-[12px] shadow-lg border border-primary-gray hover:outline-none focus:outline-none" required>
