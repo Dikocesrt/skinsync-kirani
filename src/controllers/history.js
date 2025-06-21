@@ -2,6 +2,21 @@ const { History, Product, Article, SkinType } = require("../models/index");
 const getURL = require("../helpers/getImage");
 const { marked } = require("marked");
 
+function getRecommendedPerCategory(products) {
+    const recommendMap = {};
+    products.forEach(product => {
+        const cat = product.category;
+        if (
+            !recommendMap[cat] ||
+            (product.recommend_point || 0) > (recommendMap[cat].recommend_point || 0)
+        ) {
+            recommendMap[cat] = product;
+        }
+    });
+    // Hanya ambil satu produk per kategori
+    return Object.values(recommendMap);
+}
+
 const listHistory = async (req, res) => {
     const histories = await History.findAll({ include: [{ model: SkinType, as: "skin_type" }], where: { user_id: req.session.user.id }, order: [["createdAt", "DESC"]] });
 
@@ -40,11 +55,10 @@ const detailHistory = async (req, res) => {
     }
 
     const products = await Product.findAll({
-        limit: 6,
         include: [
             { model: SkinType, as: "skin_type" },
         ],
-        where: { skin_type_id: history.skin_type_id } 
+        where: { skin_type_id: history.skin_type_id }
     });
 
     const plainProducts = products.map((product) => product.get({ plain: true }));
@@ -56,6 +70,8 @@ const detailHistory = async (req, res) => {
         }
         product.ingredient = marked.parse(product.ingredient);
     });
+
+    const recommendedProducts = getRecommendedPerCategory(plainProducts).slice(0, 6);
 
     const articles = await Article.findAll({
         limit: 4,
@@ -142,7 +158,7 @@ const detailHistory = async (req, res) => {
         ];
     }
 
-    res.render("histories/detail", { history: plainHistory, products: plainProducts, articles: plainArticles, createdAt, user: req.session.user, bahanDipakai, bahanDihindari });
+    res.render("histories/detail", { history: plainHistory, products: recommendedProducts, articles: plainArticles, createdAt, user: req.session.user, bahanDipakai, bahanDihindari });
 };
 
 module.exports = { detailHistory, listHistory };
