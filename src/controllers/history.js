@@ -1,5 +1,6 @@
 const { History, Product, Article, SkinType } = require("../models/index");
 const getURL = require("../helpers/getImage");
+const { marked } = require("marked");
 
 const listHistory = async (req, res) => {
     const histories = await History.findAll({ include: [{ model: SkinType, as: "skin_type" }], where: { user_id: req.session.user.id }, order: [["createdAt", "DESC"]] });
@@ -53,6 +54,7 @@ const detailHistory = async (req, res) => {
             product.image = getURL(product.image, 250, 200);
             product.detailImage = getURL(product.image, 800, 300);
         }
+        product.ingredient = marked.parse(product.ingredient);
     });
 
     const articles = await Article.findAll({

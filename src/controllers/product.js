@@ -1,6 +1,23 @@
 const { Product, SkinType } = require("../models/index");
 const getURL = require("../helpers/getImage");
 const { Op } = require("sequelize");
+const { marked } = require("marked");
+
+function markRecommended(products) {
+    const recommendMap = {};
+    products.forEach(product => {
+        const skinTypeId = product.skin_type_id;
+        if (
+            !recommendMap[skinTypeId] ||
+            (product.recommend_point || 0) > (recommendMap[skinTypeId].recommend_point || 0)
+        ) {
+            recommendMap[skinTypeId] = product;
+        }
+    });
+    products.forEach(product => {
+        product.isRecommend = recommendMap[product.skin_type_id] && recommendMap[product.skin_type_id].id === product.id;
+    });
+}
 
 const listProduct = async (req, res) => {
     try {
@@ -46,6 +63,7 @@ const listProduct = async (req, res) => {
                 product.image = getURL(product.image, 250, 200);
                 product.detailImage = getURL(product.image, 800, 300);
             }
+            product.ingredient = marked.parse(product.ingredient);
         });
 
         const micellarWaterProducts = plainProducts.filter((product) => product.category === "micellar water");
@@ -54,6 +72,13 @@ const listProduct = async (req, res) => {
         const serumProducts = plainProducts.filter((product) => product.category === "serum");
         const moisturizerProducts = plainProducts.filter((product) => product.category === "moisturizer");
         const sunscreenProducts = plainProducts.filter((product) => product.category === "sunscreen");
+
+        markRecommended(micellarWaterProducts);
+        markRecommended(faceWashProducts);
+        markRecommended(tonerProducts);
+        markRecommended(serumProducts);
+        markRecommended(moisturizerProducts);
+        markRecommended(sunscreenProducts);
 
         res.render("products/list", {
             products: plainProducts,

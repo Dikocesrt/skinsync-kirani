@@ -30,6 +30,15 @@ const Product = sequelize.define(
         key: "id",
       },
     },
+    good_ingredient: {
+      type: DataTypes.INTEGER
+    },
+    bad_ingredient: {
+      type: DataTypes.INTEGER
+    },
+    recommend_point: {
+      type: DataTypes.INTEGER
+    }
   },
   {
     tableName: "products",
